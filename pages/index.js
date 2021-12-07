@@ -1,3 +1,4 @@
+import ChoiceSection from 'components/home/choiceSection/ChoiceSection'
 import Head from 'next/head'
 import Hero from '../components/home/hero/Hero'
 
@@ -11,6 +12,7 @@ export default function Home() {
             </Head>
             <main>
                 <Hero />
+                <ChoiceSection />
             </main>
         </div>
     )

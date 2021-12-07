@@ -1,0 +1,52 @@
+.wrapper {
+    padding: 10% 12.5%;
+    display: flex;
+    align-items: center;
+}
+
+.choiceWrapper {
+    div {
+        width: 100%;
+        display: flex;
+        justify-content: center
+    }
+}
+
+.header {
+    font-size: 48px;
+    text-align: center;
+    font-weight: 700;
+    color: #2D3748;
+}
+
+.btn {
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    margin: 50px 0;
+}
+
+.blue {
+    color: #4299E1;
+}
+
+.btnBlue {
+    background: #4299E1;
+}
+
+.orange {
+    color: #ED8936;
+}
+
+.btnOrange {
+    background: #ED8936;
+}
+
+.purple {
+    color: #9F7AEA;
+}
+
+.btnPurple {
+    background: #9F7AEA;
+}
