@@ -2,17 +2,15 @@ import styles from './hero.module.scss'
 import gsap, { Power4, Back } from 'gsap'
 import { useEffect, useRef } from 'react';
 const Web3 = require('web3')
-import ABI from '../../abi.json';
+import ABI from '../../../abi/abi.json';
 
 
 function Hero() {
     const greenBox = useRef(null);
     const wrapper = useRef(null);
 
-    
-
-    const connectToMetamask = async () => { 
-        if(typeof window.ethereum !== 'undefined') {
+    const connectToMetamask = async () => {
+        if (typeof window.ethereum !== 'undefined') {
             let web3 = new Web3(window.ethereum);
             try {
                 await window.ethereum.enable();
@@ -22,11 +20,11 @@ function Hero() {
                     const contractAddress = "0x5BFA8DB86bB98fa4c8d4B5413772F4516C127E1f";
                     let contract = new web3.eth.Contract(ABI, contractAddress);
                     console.log(contract)
-                }catch(e) {
+                } catch (e) {
                     console.log(e)
                 }
             }
-            catch(e) {
+            catch (e) {
                 console.log(e);
             }
         }
@@ -70,7 +68,7 @@ function Hero() {
                 </div>
                 <p className={styles.description}>{text}</p>
                 <div className={styles.buttonsWrapper}>
-                    <button className={styles.greenBtn} onClick = {connectToMetamask}>Get started</button>
+                    <button className={styles.greenBtn} onClick={connectToMetamask}>Get started</button>
                     <button className={styles.grayBtn}>Get started</button>
                 </div>
             </div>
