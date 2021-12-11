@@ -38,22 +38,20 @@ export default function Nav() {
                     </div>
                 ) : (
                     <>
-                        <div style={{ zIndex: "5" }}>
+                        <div className={styles.menu}>
                             <Hamburger
                                 color={isOpen ? "#fff" : "#000"}
                                 onToggle={(toggled) => {
-                                    if (toggled) {
-                                        setOpen("active");
-                                    } else {
-                                        setOpen();
-                                    }
+                                    if (toggled) setOpen("active");
+                                    else setOpen();
                                 }}
                             />
                         </div>
 
                         <div
-                            className={`${styles.menuBoxMobile} ${isOpen && styles.menuBoxMobileActive
-                                }`}
+                            className={`${styles.menuBoxMobile} ${
+                                isOpen && styles.menuBoxMobileActive
+                            }`}
                         >
                             <ul>
                                 <li>
@@ -67,17 +65,6 @@ export default function Nav() {
                                 </li>
                                 <li>
                                     <a href="#">About</a>
-                                </li>
-                                <li className="social-links">
-                                    <a href="">
-                                        <img src="/social-media/facebook-icon.svg" alt="Facebook" />
-                                    </a>
-                                    <a href="">
-                                        <img src="/social-media/twitter-icon.svg" alt="Twitter" />
-                                    </a>
-                                    <a href="">
-                                        <img src="/social-media/telegram-icon.svg" alt="Telegram" />
-                                    </a>
                                 </li>
                             </ul>
                         </div>

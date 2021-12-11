@@ -1,9 +1,9 @@
-import AchievementsSection from 'components/home/achievements/AchievementsSection'
-import DarkSection from 'components/home/darkSection/DarkSection'
-import Hero from 'components/home/hero/Hero'
-import Nav from 'components/shared/nav/Nav'
-import Head from 'next/head'
-import CoinInfo from '../components/home/coinInfo/CoinInfo'
+import AchievementsSection from "components/home/achievements/AchievementsSection";
+import DarkSection from "components/home/darkSection/DarkSection";
+import Hero from "components/home/hero/Hero";
+import Nav from "components/shared/nav/Nav";
+import Head from "next/head";
+import CoinInfo from "../components/home/coinInfo/CoinInfo";
 
 /* 
 @media(max-width: 1280px) {
@@ -25,5 +25,5 @@ export default function Home() {
                 <AchievementsSection />
             </main>
         </div>
-    )
+    );
 }

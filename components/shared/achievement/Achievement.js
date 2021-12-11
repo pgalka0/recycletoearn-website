@@ -3,7 +3,7 @@ import styles from "./achievement.module.scss";
 export default function Achievement(props) {
     return (
         <div className={styles.wrapper}>
-            <div className={styles.circle}>
+            <div className={styles.circle} style={{ backgroundColor: `${props.color}` }}>
                 <img src={`/${props.icon}`} alt={props.name} />
             </div>
             <div className={styles.info}>
