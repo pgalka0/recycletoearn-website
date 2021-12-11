@@ -21,6 +21,25 @@
 			},
 			{
 				"indexed": false,
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "userAdded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "userId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "totalScore",
 				"type": "uint256"

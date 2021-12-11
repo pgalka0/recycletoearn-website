@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState} from "react";
 import styles from "./hero.module.scss";
 import gsap, { Power4 } from "gsap";
-import {handleMetamaskConnection, addUser} from '../../../Contracts/web3functions'
+import {handleMetamaskConnection, addUser, readUsers} from '../../../Contracts/web3functions'
 import abi from '../../../Contracts/abi.json';
 const Web3 = require("web3")
+
 function Hero() {
     const purpleBox = useRef(null);
     const wrapper = useRef(null);
     const [account, setAccount] = useState("");
+    const [users, setUsers] = useState([]);
 
     
 
@@ -20,14 +22,10 @@ function Hero() {
         } else {
             window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
         }
-        
-        const contractAddress = '0x71A9c7F9e1E5664393372b1cdE04BfB6004f0739';
+
+        const contractAddress = '0x53401A0Ce8BA6572b629a6F9F1271AF46a73cF35';
 
         const contract = new window.web3.eth.Contract(abi, contractAddress);
-        console.log("methods: ", contract.methods)
-        console.log(account)
-        addUser(account, contract);
-
     }, [account])
 
     useEffect(() => {
