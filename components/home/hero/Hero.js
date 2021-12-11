@@ -54,6 +54,7 @@ function Hero() {
 }
 
 export default Hero;
+
 //temponary
 const text =
     "Snippy is a rich coding snippets app that lets you create your own code snippets, categorize them, and even sync them in the cloud so you can use them anywhere.";
