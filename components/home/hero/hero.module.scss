@@ -8,10 +8,10 @@
 }
 
 .leftWrapper {
-    width: 40%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 40%;
 }
 
 .leftWrapper {
@@ -39,9 +39,7 @@
             position: absolute;
         }
     }
-
 }
-
 
 .description {
     color: rgba(45, 55, 72, 1);
