@@ -1,8 +1,14 @@
 import AchievementsSection from 'components/home/achievements/AchievementsSection'
-import ChoiceSection from 'components/home/choiceSection/ChoiceSection'
+import DarkSection from 'components/home/darkSection/darkSection'
+import Hero from 'components/home/hero/Hero'
+import Nav from 'components/shared/nav/Nav'
 import Head from 'next/head'
-import Hero from '../components/home/hero/Hero'
+import CoinInfo from '../components/home/coinInfo/CoinInfo'
 
+/* 
+@media(max-width: 1280px) {
+@media(max-width: 768px) {
+*/
 export default function Home() {
     return (
         <div>
@@ -12,8 +18,10 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
+                <Nav />
                 <Hero />
-                <ChoiceSection />
+                <CoinInfo />
+                <DarkSection />
                 <AchievementsSection />
             </main>
         </div>

@@ -10,46 +10,12 @@
     display: flex;
     gap: 25px;
     align-self: flex-end;
-
-
 }
-
-.achievementsBox {
-    position: relative;
-    width: 30%;
-    height: 180px;
-    border: 2px solid rgba(66, 68, 90, 1);
-    border-radius: 25px;
-    background: #fff;
-    border-top: 0;
-
-    .circle {
-        position: absolute;
-        width: 80%;
-        height: 100%;
-        left: 10%;
-        top: -90px;
-        border-radius: 100%;
-        z-index: -1;
-        border: 2px solid rgba(66, 68, 90, 1);
-    }
-
-    img {
-        object-fit: cover;
-        position: absolute;
-        z-index: 1;
-        width: 100px;
-        height: 100px;
-        top: -70px;
-        left: 25%;
-    }
-}
-
 
 .rightWrapper {
     width: 40%;
     position: relative;
-    background: #4299E1;
+    background: #4299e1;
     color: #fff;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -76,5 +42,5 @@
     height: 100%;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    background-color: #E4E4E4;
+    background-color: #e4e4e4;
 }

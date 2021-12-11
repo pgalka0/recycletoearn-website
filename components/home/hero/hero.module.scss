@@ -3,11 +3,15 @@
     display: flex;
     gap: 15%;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.leftWrapper,
-.rightWrapper {
-    width: 50%;
+.leftWrapper {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .leftWrapper {
@@ -20,7 +24,7 @@
 .headerBox {
     font-size: 50px;
     font-weight: 700;
-    color: #48BB78;
+    color: #8d27dd;
 
     .header {
         color: rgba(45, 55, 72, 1);
@@ -30,7 +34,7 @@
             height: 15px;
             left: 0;
             z-index: -1;
-            background: #48BB78;
+            background: #8d27dd;
             bottom: 8px;
             position: absolute;
         }
@@ -45,29 +49,30 @@
     font-size: 17px;
 }
 
-.greenBtn {
-    background: #48BB78;
+.purpleBtn {
+    background: #8d27dd;
     color: #fff;
 }
 
-.grayBtn {
-    background: #EDF2F7;
-    color: rgba(45, 55, 72, 1);
-    margin-left: 25px;
+.rightImg {
+    position: absolute;
+    height: 600px;
+    transform: rotate(20deg);
+    right: -300px;
 }
 
-/* right */
+.topCenterImg {
+    position: absolute;
+    height: 80px;
+    transform: rotate(-20deg);
+    top: 10%;
+    right: 30%;
+}
 
-.rightWrapper {
-    height: 500px;
-    position: relative;
-
-
-    // temponary
-    .rBox {
-        // object-fit: cover;
-        width: 100%;
-        height: 100%;
-        background: rgba(72, 187, 120, 0.4);
-    }
+.bottomCenterImg {
+    position: absolute;
+    height: 120px;
+    transform: rotate(-40deg);
+    bottom: 10%;
+    right: 40%;
 }
