@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./hero.module.scss";
 import gsap, { Power4 } from "gsap";
-import {handleMetamaskConnection, addUser, readUsers} from '../../../Contracts/web3functions'
+import { handleMetamaskConnection, addUser, readUsers } from '../../../Contracts/web3functions'
 import abi from '../../../Contracts/abi.json';
 const Web3 = require("web3")
 
@@ -11,7 +11,7 @@ function Hero() {
     const [account, setAccount] = useState("");
     const [users, setUsers] = useState([]);
 
-    
+
 
     useEffect(() => {
         // Check for Web3 
@@ -68,10 +68,10 @@ function Hero() {
                 </div>
                 <p className={styles.description}>{text}</p>
                 <div className={styles.buttonsWrapper}>
-                    <button 
+                    <button
                         className={styles.purpleBtn}
-                        onClick = {() => {handleMetamaskConnection(window, setAccount)}}
-                     >Connect To Metamask</button>
+                        onClick={() => { handleMetamaskConnection(window, setAccount) }}
+                    >Connect To Metamask</button>
                 </div>
             </div>
         </div>

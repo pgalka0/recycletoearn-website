@@ -36,11 +36,24 @@
     height: 100%;
     display: flex;
     align-items: center;
+    outline: 2px solid red;
+    position: relative;
 
-    img {
-        position: absolute;
-        height: 300px;
+    iframe {
+        z-index: 2;
+        width: 400px;
+        height: 400px;
+        transform: rotate(180deg);
     }
+}
+
+.transparentBox {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: red;
+    top: 10%;
+    z-index: 2;
 }
 
 .coinInfo {
@@ -77,11 +90,25 @@
     .coinWrapper {
         width: 100%;
         justify-content: center;
+        height: 50%;
+
+        iframe {
+            transform: rotate(0);
+        }
     }
 
     .coinInfo {
         width: 70%;
         align-self: center;
+    }
+
+    .transparentBox {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background: red;
+        top: 0;
+        z-index: 2;
     }
 }
 

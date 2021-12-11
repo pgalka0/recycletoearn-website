@@ -17,7 +17,9 @@ function DarkSection() {
             <div className={styles.wrapperTop}>
                 <div className={styles.coinWrapper}>
                     {/* <iframe src='https://my.spline.design/untitled-30a5cc0c152ce2391ff24831bfc824bf/' frameBorder='0' width='100%' height='100%'></iframe>  */}
-                    <img src="/tempCoin.svg" alt="" />
+                    {/* <img src="/tempCoin.svg" alt="" /> */}
+                    <iframe src='https://my.spline.design/untitled-30a5cc0c152ce2391ff24831bfc824bf/' frameborder='0'></iframe>
+                    <div className={styles.transparentBox}></div>
                 </div>
                 <div className={styles.coinInfo}>
                     <p className={styles.header}>Get our coin</p>

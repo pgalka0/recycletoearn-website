@@ -8,7 +8,8 @@
     .headerWrapper {
         display: flex;
         flex-direction: column;
-        width: 600px;
+        // width: 600px;
+
         .header {
             font-size: 50px;
             font-weight: 700;
@@ -106,7 +107,6 @@
         gap: 50px;
 
         .headerWrapper {
-            width: 70%;
             align-self: center;
         }
 
@@ -120,6 +120,7 @@
                 align-items: center;
                 gap: 100px;
                 padding: 10px 0;
+                width: 80%;
             }
 
             .rightWrapper {
@@ -156,6 +157,7 @@
                 font-size: 40px;
             }
         }
+
         .mainBox {
             .leftWrapper {
                 flex-direction: column;
@@ -163,8 +165,12 @@
                 align-items: center;
                 gap: 100px;
                 padding: 10px 0;
+                width: 100%;
             }
+
             .rightWrapper {
+                width: 100%;
+
                 .headerBoxRight {
                     font-size: 23px;
                 }

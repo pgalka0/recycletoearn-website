@@ -5,6 +5,25 @@ import useWindowWidth from "hooks/useWindowWidth";
 
 import { useState } from "react";
 
+function Menu() {
+    return (
+        <div className={styles.menuBox}>
+            <span>
+                <a href="#">Home</a>
+            </span>
+            <span>
+                <a href="#">Coin</a>
+            </span>
+            <span>
+                <a href="#">Achievements</a>
+            </span>
+            <span>
+                <a href="#">About</a>
+            </span>
+        </div>
+    )
+}
+
 export default function Nav() {
     const [isOpen, setOpen] = useState();
 
@@ -21,7 +40,7 @@ export default function Nav() {
                 </div>
             </div>
             <div className={styles.rightWrapper}>
-                {useWindowWidth() > 1280 ? (
+                {useWindowWidth() > 1280 ?
                     <div className={styles.menuBox}>
                         <span>
                             <a href="#">Home</a>
@@ -36,11 +55,11 @@ export default function Nav() {
                             <a href="#">About</a>
                         </span>
                     </div>
-                ) : (
+                    :
                     <>
                         <div className={styles.menu}>
                             <Hamburger
-                                color={isOpen ? "#fff" : "#000"}
+                                color={isOpen ? "#fff" : "#2d3748"}
                                 onToggle={(toggled) => {
                                     if (toggled) setOpen("active");
                                     else setOpen();
@@ -48,11 +67,7 @@ export default function Nav() {
                             />
                         </div>
 
-                        <div
-                            className={`${styles.menuBoxMobile} ${
-                                isOpen && styles.menuBoxMobileActive
-                            }`}
-                        >
+                        <div className={`${styles.menuBoxMobile} ${isOpen && styles.menuBoxMobileActive}`}>
                             <ul>
                                 <li>
                                     <a href="#">Home</a>
@@ -69,8 +84,8 @@ export default function Nav() {
                             </ul>
                         </div>
                     </>
-                )}
+                }
             </div>
-        </nav>
+        </nav >
     );
 }
