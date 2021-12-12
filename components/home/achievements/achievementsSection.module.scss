@@ -166,7 +166,11 @@
     .wrapper {
         .headerWrapper {
             .headerBox {
-                font-size: 40px;
+                font-size: 33px;
+            }
+
+            &:nth-child(1) {
+                font-size: 14px;
             }
         }
 
@@ -187,7 +191,11 @@
                 }
 
                 .description {
-                    font-size: 15px;
+                    font-size: 14px;
+                }
+
+                button {
+                    font-size: 14px;
                 }
             }
         }
