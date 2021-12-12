@@ -1,16 +1,21 @@
 import AchievementsSection from "components/home/achievements/AchievementsSection";
+import AnimationView from "components/home/animationView/AnimationView";
 import DarkSection from "components/home/darkSection/DarkSection";
 import Hero from "components/home/hero/Hero";
 import Nav from "components/shared/nav/Nav";
 import Head from "next/head";
+import { useState, useEffect } from "react";
 import CoinInfo from "../components/home/coinInfo/CoinInfo";
-
 /* 
 @media(max-width: 1280px) {
 @media(max-width: 768px) {
 */
 
 export default function Home() {
+    const [active, setActive] = useState(true)
+    useEffect(() => {
+        setTimeout(() => setActive(!active), 5000)
+    }, [])
     return (
         <div>
             <Head>
@@ -19,12 +24,19 @@ export default function Home() {
                 <link rel="icon" href="/logoPurpleSaturated.png" />
             </Head>
             <main>
-                <Nav />
-                <Hero />
-                <CoinInfo />
-                <DarkSection />
-                <AchievementsSection />
-            </main>
-        </div>
+                {active ?
+                    <AnimationView />
+                    :
+                    <></>
+                }
+                <div style={{ display: `${!active ? 'block' : 'none'}` }}>
+                    <Nav />
+                    <Hero />
+                    <CoinInfo />
+                    <DarkSection />
+                    <AchievementsSection />
+                </div>
+            </main >
+        </div >
     );
 }
