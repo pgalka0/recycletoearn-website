@@ -12,10 +12,10 @@ import CoinInfo from "../components/home/coinInfo/CoinInfo";
 */
 
 export default function Home() {
-    const [active, setActive] = useState(true)
-    useEffect(() => {
-        setTimeout(() => setActive(!active), 5000)
-    }, [])
+    // const [active, setActive] = useState(true)
+    // useEffect(() => {
+    //     setTimeout(() => setActive(!active), 5000)
+    // }, [])
     return (
         <div>
             <Head>
@@ -24,18 +24,11 @@ export default function Home() {
                 <link rel="icon" href="/logoPurpleSaturated.png" />
             </Head>
             <main>
-                {active ?
-                    <AnimationView />
-                    :
-                    <></>
-                }
-                <div style={{ display: `${!active ? 'block' : 'none'}` }}>
-                    <Nav />
-                    <Hero />
-                    <CoinInfo />
-                    <DarkSection />
-                    <AchievementsSection />
-                </div>
+                <Nav />
+                <Hero />
+                <CoinInfo />
+                <DarkSection />
+                <AchievementsSection />
             </main >
         </div >
     );
