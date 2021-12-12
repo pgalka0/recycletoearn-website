@@ -39,113 +39,117 @@
     justify-content: flex-end;
     font-size: 17px;
 
-    .menuBox {
+    .menu {
         display: flex;
         gap: 50px;
 
-        span {
+        li {
             color: #999;
             font-weight: 500;
 
             :hover {
                 color: #000;
-                transition: color .5s;
+                transition: color 0.5s;
             }
         }
     }
 
-    .menu {
-        z-index: 5;
-    }
+    .hamburgerMenu {
+        .hamburger {
+            z-index: 11;
+        }
 
-    .menuBoxMobile {
-        display: grid;
-        place-items: center;
-        position: fixed;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background: transparent;
-        opacity: 1;
-        text-align: center;
-        visibility: hidden;
-        z-index: 100;
-        transition: all 0.375s;
+        .hamburgerActive {
+            right: 12.5%;
+            top: 2.5%;
+            position: fixed;
+        }
 
-        ul {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-            height: 100%;
+        .menuBoxMobile {
+            display: grid;
+            place-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            opacity: 1;
+            text-align: center;
+            visibility: hidden;
+            z-index: 10;
+            transition: all 0.6s;
 
-            li {
-                display: block;
-                opacity: 1;
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10%;
+                height: 100%;
 
-                a {
+                li {
+                    a {
+                        transition: all 0.5s 0.3s;
+                        opacity: 0;
+                    }
+
+                    display: block;
                     opacity: 1;
                     font-size: 20px;
                     color: rgb(255, 255, 255);
-                }
+                    font-weight: 500;
 
-                img {
-                    height: 60px;
-                    margin: 10px;
+                    :hover {
+                        color: rgb(185, 185, 185);
+                        transition: color 0.2s;
+                    }
+
+                    img {
+                        height: 60px;
+                        margin: 10px;
+                    }
                 }
             }
         }
-    }
 
-    .menuBoxMobileActive {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(255, 255, 255);
-        opacity: 1;
-        z-index: 2;
-        visibility: visible;
-
-        li {
-            z-index: 10;
+        .menuBoxMobileActive {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 255, 255);
             opacity: 1;
+            z-index: 10;
+            visibility: visible;
+            ul {
+                li {
+                    z-index: 10;
+                    opacity: 1;
 
-            a {
-                opacity: 1;
+                    a {
+                        opacity: 1;
+                    }
+                }
             }
         }
+
+        .menuBoxMobile::before {
+            content: "";
+            position: absolute;
+            overflow: hidden;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #8d27dd;
+            transform: skew(-20deg) translateX(-300%);
+            transition: all 0.4s 0.5s;
+        }
+
+        .menuBoxMobileActive::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
-
-    .menuBoxMobile::before {
-        content: "";
-        position: absolute;
-        overflow: hidden;
-        height: 100%;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #8d27dd;
-        transform: skew(-20deg) translateX(-200%);
-        transition: all 0.275s 0.1s;
-    }
-
-    .menuBoxMobileActive::before {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.menuBoxMobile a {
-    opacity: 0;
-}
-
-.menuBoxMobileActive a {
-    opacity: 1;
-}
-
-.menuBoxMobile li a {
-    transition: all 275ms 175ms;
 }

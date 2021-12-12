@@ -7,26 +7,60 @@ import { useState } from "react";
 
 function Menu() {
     return (
-        <div className={styles.menuBox}>
-            <span>
+        <ul className={styles.menu}>
+            <li>
                 <a href="#">Home</a>
-            </span>
-            <span>
+            </li>
+            <li>
                 <a href="#">Coin</a>
-            </span>
-            <span>
+            </li>
+            <li>
                 <a href="#">Achievements</a>
-            </span>
-            <span>
+            </li>
+            <li>
                 <a href="#">About</a>
-            </span>
+            </li>
+        </ul>
+    );
+}
+
+function HamburgerMenu() {
+    const [isOpen, setOpen] = useState(false);
+    return (
+        <div className={styles.hamburgerMenu}>
+            <div className={`${styles.hamburger} ${isOpen && styles.hamburgerActive} `}>
+                <Hamburger
+                    rounded
+                    toggled={isOpen}
+                    color={isOpen ? "#fff" : "#2d3748"}
+                    onToggle={(toggled) => {
+                        if (toggled) setOpen(true);
+                        else setOpen(false);
+                    }}
+                />
+            </div>
+
+            <div className={`${styles.menuBoxMobile} ${isOpen && styles.menuBoxMobileActive}`}>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Coin</a>
+                    </li>
+                    <li>
+                        <a href="#">Achievements</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    )
+    );
 }
 
 export default function Nav() {
-    const [isOpen, setOpen] = useState();
-
     return (
         <nav className={styles.wrapper}>
             <div className={styles.leftWrapper}>
@@ -40,52 +74,8 @@ export default function Nav() {
                 </div>
             </div>
             <div className={styles.rightWrapper}>
-                {useWindowWidth() > 1280 ?
-                    <div className={styles.menuBox}>
-                        <span>
-                            <a href="#">Home</a>
-                        </span>
-                        <span>
-                            <a href="#">Coin</a>
-                        </span>
-                        <span>
-                            <a href="#">Achievements</a>
-                        </span>
-                        <span>
-                            <a href="#">About</a>
-                        </span>
-                    </div>
-                    :
-                    <>
-                        <div className={styles.menu}>
-                            <Hamburger
-                                color={isOpen ? "#fff" : "#2d3748"}
-                                onToggle={(toggled) => {
-                                    if (toggled) setOpen("active");
-                                    else setOpen();
-                                }}
-                            />
-                        </div>
-
-                        <div className={`${styles.menuBoxMobile} ${isOpen && styles.menuBoxMobileActive}`}>
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">Coin</a>
-                                </li>
-                                <li>
-                                    <a href="#">Achievements</a>
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </>
-                }
+                {useWindowWidth() > 1280 ? <Menu /> : <HamburgerMenu />}
             </div>
-        </nav >
+        </nav>
     );
 }

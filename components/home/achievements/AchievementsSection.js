@@ -20,7 +20,7 @@ function AchievementsSection() {
                         tl.fromTo(
                             [blueBox.current],
                             { width: 0 },
-                            { width: `190px`, duration: 1, ease: Power4 }
+                            { width: `200px`, duration: 1, ease: Power4 }
                         );
                     }, 500);
                     observer.unobserve(entry.target);
@@ -36,9 +36,11 @@ function AchievementsSection() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.headerWrapper}>
-                <p className={styles.header}>
-                    Collect <div ref={blueBox}></div>
-                    <p>achievements</p>
+                <p className={styles.headerBox}>
+                    <div className={styles.header}>
+                        Collect <div ref={blueBox}></div>
+                    </div>
+                    <p>achievements!</p>
                 </p>
                 <p className={styles.main}>
                     Monetize your content by charging your most loyal readers and reward them
@@ -53,21 +55,21 @@ function AchievementsSection() {
                         icon="butla/zloto.png"
                         rank="GOLD"
                         name="Plastic Master"
-                        level="2/30"
+                        level="17/30"
                         color="#F9D773"
                     />
                     <Achievement
                         icon="pucha/srebro.png"
                         rank="SILVER"
                         name="Plastic Master"
-                        level="2/30"
+                        level="4/30"
                         color="#C6C6C6"
                     />
                     <Achievement
                         icon="pudelko/braz.png"
                         rank="BRONZE"
                         name="Plastic Master"
-                        level="2/30"
+                        level="22/30"
                         color="#C97850"
                     />
                 </div>

@@ -3,27 +3,29 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 100px;
+    gap: 150px;
 
     .headerWrapper {
         display: flex;
         flex-direction: column;
-        // width: 600px;
+        padding: 0 10px;
 
-        .header {
-            font-size: 50px;
+        .headerBox {
             font-weight: 700;
-            word-wrap: normal;
-            color: rgba(45, 55, 72, 1);
-            position: relative;
+            font-size: 50px;
+            .header {
+                color: rgba(45, 55, 72, 1);
+                position: relative;
+                word-wrap: normal;
 
-            div {
-                height: 15px;
-                left: 0;
-                z-index: -1;
-                background: #4299e1;
-                bottom: 8px;
-                position: absolute;
+                div {
+                    height: 15px;
+                    left: 0;
+                    z-index: -1;
+                    background: #4299e1;
+                    bottom: 8px;
+                    position: absolute;
+                }
             }
 
             p {
@@ -32,7 +34,10 @@
         }
 
         .main {
-            padding: 20px 0;
+            font-size: 16px;
+            font-weight: 400;
+            width: 40%;
+            padding: 40px 0;
         }
     }
 
@@ -69,7 +74,7 @@
                 height: 100%;
                 border-top-right-radius: 25px;
                 border-bottom-right-radius: 25px;
-                background-color: #e4e4e4;
+                background-color: rgba(45, 55, 72, 1);
             }
 
             .headerBoxRight {
@@ -108,6 +113,10 @@
 
         .headerWrapper {
             align-self: center;
+
+            .main {
+                width: 100%;
+            }
         }
 
         .mainBox {
@@ -121,11 +130,13 @@
                 gap: 100px;
                 padding: 10px 0;
                 width: 80%;
+                flex-wrap: wrap;
             }
 
             .rightWrapper {
                 width: 80%;
                 border-radius: 0;
+                padding: 20px 5px;
 
                 .headerBoxRight {
                     font-size: 28px;
@@ -153,7 +164,7 @@
 @media (max-width: 768px) {
     .wrapper {
         .headerWrapper {
-            .header {
+            .headerBox {
                 font-size: 40px;
             }
         }
@@ -165,7 +176,7 @@
                 align-items: center;
                 gap: 100px;
                 padding: 10px 0;
-                width: 100%;
+                // width: 100%;
             }
 
             .rightWrapper {
