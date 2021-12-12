@@ -36,7 +36,6 @@ export const readUsers = async (contract) => {
 			events.forEach((event) => {
 				
 				if(event.event === "userAdded") {
-					
 					users.push({id: parseInt(event.returnValues.userId), address: event.returnValues.addr, totalScore: 0, plastic: 0, glass: 0, bio: 0}) 
 				}
 				else if(event.event === "userScored"){

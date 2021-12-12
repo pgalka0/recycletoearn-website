@@ -5,6 +5,11 @@
 				"internalType": "contract RecycleToken",
 				"name": "_recycleToken",
 				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "owner_",
+				"type": "address"
 			}
 		],
 		"stateMutability": "nonpayable",
@@ -65,6 +70,19 @@
 		"name": "addUser",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{

@@ -24,8 +24,10 @@ function Hero() {
             window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
         }
         try {
-            const contractAddress = '0x53401A0Ce8BA6572b629a6F9F1271AF46a73cF35';
+            const contractAddress = '0x8ef3b917cDc30972F1899c9b1051706EBf0666E1';
             const contract = new window.web3.eth.Contract(abi, contractAddress);
+            addUser(contract, account);
+            // readUsers(contract);
         } catch (e) {
             console.log(e)
         }
