@@ -13,6 +13,7 @@
         .headerBox {
             font-weight: 700;
             font-size: 50px;
+
             .header {
                 color: rgba(45, 55, 72, 1);
                 position: relative;
@@ -74,7 +75,7 @@
                 height: 100%;
                 border-top-right-radius: 25px;
                 border-bottom-right-radius: 25px;
-                background-color: rgba(45, 55, 72, 1);
+                background-color: rgb(219, 219, 219);
             }
 
             .headerBoxRight {
@@ -165,7 +166,11 @@
     .wrapper {
         .headerWrapper {
             .headerBox {
-                font-size: 40px;
+                font-size: 33px;
+            }
+
+            &:nth-child(1) {
+                font-size: 14px;
             }
         }
 
@@ -176,7 +181,6 @@
                 align-items: center;
                 gap: 100px;
                 padding: 10px 0;
-                // width: 100%;
             }
 
             .rightWrapper {
@@ -187,7 +191,11 @@
                 }
 
                 .description {
-                    font-size: 15px;
+                    font-size: 14px;
+                }
+
+                button {
+                    font-size: 14px;
                 }
             }
         }

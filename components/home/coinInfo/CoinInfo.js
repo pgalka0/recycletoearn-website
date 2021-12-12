@@ -7,8 +7,6 @@ import { useEffect, useRef } from 'react';
 const Web3 = require('web3')
 function CoinInfo() {
     const greenBox = useRef(null);
-    const wrapper = useRef(null);
-
 
     useEffect(() => {
         const observerOptions = {
@@ -32,10 +30,10 @@ function CoinInfo() {
             observerOptions,
         );
 
-        observer.observe(wrapper.current);
+        observer.observe(greenBox.current);
     }, [])
     return (
-        <div className={styles.wrapper} ref={wrapper}>
+        <div className={styles.wrapper}>
             <div className={styles.leftWrapper}>
                 <img src="/logo.png" alt="" />
             </div>
@@ -52,7 +50,7 @@ function CoinInfo() {
                     <button className={styles.grayBtn}>Get started</button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

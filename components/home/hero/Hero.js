@@ -3,6 +3,7 @@ import styles from "./hero.module.scss";
 import gsap, { Power4 } from "gsap";
 import { handleMetamaskConnection, addUser, readUsers } from '../../../Contracts/web3functions'
 import abi from '../../../Contracts/abi.json';
+import useWindowWidth from "hooks/useWindowWidth";
 const Web3 = require("web3")
 
 function Hero() {
@@ -22,10 +23,13 @@ function Hero() {
         } else {
             window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
         }
+        try {
+            const contractAddress = '0x53401A0Ce8BA6572b629a6F9F1271AF46a73cF35';
+            const contract = new window.web3.eth.Contract(abi, contractAddress);
+        } catch (e) {
+            console.log(e)
+        }
 
-        const contractAddress = '0x53401A0Ce8BA6572b629a6F9F1271AF46a73cF35';
-
-        const contract = new window.web3.eth.Contract(abi, contractAddress);
     }, [account])
 
     useEffect(() => {
