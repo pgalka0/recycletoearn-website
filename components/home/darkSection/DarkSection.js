@@ -1,3 +1,4 @@
+import useWindowWidth from 'hooks/useWindowWidth';
 import styles from './darkSection.module.scss'
 
 function DarkSection() {
@@ -18,7 +19,12 @@ function DarkSection() {
                 <div className={styles.coinWrapper}>
                     {/* <iframe src='https://my.spline.design/untitled-30a5cc0c152ce2391ff24831bfc824bf/' frameBorder='0' width='100%' height='100%'></iframe>  */}
                     {/* <img src="/tempCoin.svg" alt="" /> */}
-                    <iframe src='https://my.spline.design/untitled-30a5cc0c152ce2391ff24831bfc824bf/' frameborder='0'></iframe>
+                    {/* {useWindowWidth() > 1280 ?
+                        <iframe src='https://my.spline.design/untitled-30a5cc0c152ce2391ff24831bfc824bf/' frameborder='0'></iframe>
+                        :
+                        <iframe src='https://my.spline.design/coin-9015c408e58ea4fc922c6a97233c07cd/' frameborder='0' width='100%' height='100%'></iframe>
+                    } */}
+                    <iframe src='https://my.spline.design/coin-9015c408e58ea4fc922c6a97233c07cd/' frameborder='0' width='100%' height='100%'></iframe>
                     <div className={styles.transparentBox}></div>
                 </div>
                 <div className={styles.coinInfo}>
