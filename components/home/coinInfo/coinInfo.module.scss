@@ -94,4 +94,22 @@
     .leftWrapper {
         width: 100%;
     }
+
+    .leftWrapper {
+        img {
+            transform: rotate(0);
+        }
+    }
+
+    .headerBox {
+        font-size: 35px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .buttonsWrapper {
+        font-size: 14px;
+    }
 }
