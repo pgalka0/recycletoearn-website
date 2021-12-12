@@ -1,0 +1,56 @@
+.wrapper {
+    padding: 2.5% 12.5%;
+    display: flex;
+    gap: 15%;
+    align-items: center;
+    font-family: "Work Sans";
+}
+
+.leftWrapper,
+.rightWrapper {
+    width: 50%;
+}
+
+.leftWrapper {
+    .logoBox {
+        display: flex;
+        align-items: center;
+
+        p {
+            font-weight: 800;
+            padding-left: 20px;
+            color: #000;
+            font-size: 27px;
+
+            span {
+                color: #8d27dd;
+            }
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.rightWrapper {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 17px;
+
+    .menu {
+        display: flex;
+        gap: 50px;
+
+        li {
+            color: #999;
+            font-weight: 500;
+
+            :hover {
+                color: #000;
+                transition: color 0.5s;
+            }
+        }
+    }
+}

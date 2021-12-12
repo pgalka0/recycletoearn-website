@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./nav.module.scss";
 import { Fade as Hamburger } from "hamburger-react";
 import useWindowWidth from "hooks/useWindowWidth";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -9,16 +10,18 @@ function Menu() {
     return (
         <ul className={styles.menu}>
             <li>
-                <a href="#">Home</a>
+                <Link href="/">
+                    <a>Home</a>
+                </Link>
             </li>
             <li>
-                <a href="#">Coin</a>
+                <a href="#about">About</a>
             </li>
             <li>
-                <a href="#">Achievements</a>
+                <a href="#coin">Coin</a>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="#achievements">Achievements</a>
             </li>
         </ul>
     );
@@ -27,7 +30,7 @@ function Menu() {
 function HamburgerMenu() {
     const [isOpen, setOpen] = useState(false);
     return (
-        <div className={styles.hamburgerMenu}>
+        <div className={styles.hamburgerMenu} id="home">
             <div className={`${styles.hamburger} ${isOpen && styles.hamburgerActive} `}>
                 <Hamburger
                     rounded
@@ -43,16 +46,24 @@ function HamburgerMenu() {
             <div className={`${styles.menuBoxMobile} ${isOpen && styles.menuBoxMobileActive}`}>
                 <ul>
                     <li>
-                        <a href="#">Home</a>
+                        <Link href="/" onClick={() => setOpen(false)}>
+                            <a>Home</a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#">Coin</a>
+                        <a href="#about" onClick={() => setOpen(false)}>
+                            About
+                        </a>
                     </li>
                     <li>
-                        <a href="#">Achievements</a>
+                        <a href="#coin" onClick={() => setOpen(false)}>
+                            Coin
+                        </a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="#achievements" onClick={() => setOpen(false)}>
+                            Achievements
+                        </a>
                     </li>
                 </ul>
             </div>

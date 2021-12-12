@@ -1,10 +1,8 @@
-import styles from './coinInfo.module.scss'
-import gsap, { Power4, Back } from 'gsap'
-import { useEffect, useRef } from 'react';
+import styles from "./coinInfo.module.scss";
+import gsap, { Power4, Back } from "gsap";
+import { useEffect, useRef } from "react";
 
-
-
-const Web3 = require('web3')
+const Web3 = require("web3");
 function CoinInfo() {
     const greenBox = useRef(null);
 
@@ -14,32 +12,34 @@ function CoinInfo() {
         };
 
         const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     const tl = gsap.timeline();
                     setTimeout(() => {
-                        tl.fromTo([greenBox.current], { width: 0 }, { width: `250px`, duration: 1, ease: Power4 });
+                        tl.fromTo(
+                            [greenBox.current],
+                            { width: 0 },
+                            { width: `250px`, duration: 1, ease: Power4 }
+                        );
                     }, 500);
                     observer.unobserve(entry.target);
                 }
             });
         };
 
-        const observer = new IntersectionObserver(
-            observerCallback,
-            observerOptions,
-        );
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
 
         observer.observe(greenBox.current);
-    }, [])
+    }, []);
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id="about">
             <div className={styles.leftWrapper}>
                 <img src="/logo.png" alt="" />
             </div>
             <div className={styles.rightWrapper}>
                 <div className={styles.headerBox}>
-                    <p className={styles.header}>Recycle,
+                    <p className={styles.header}>
+                        Recycle,
                         <div ref={greenBox}></div>
                     </p>
                     <p>earn money!</p>
@@ -50,11 +50,12 @@ function CoinInfo() {
                     <button className={styles.grayBtn}>Get started</button>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
 
 export default CoinInfo;
 
 //temponary
-const text = "Snippy is a rich coding snippets app that lets you create your own code snippets, categorize them, and even sync them in the cloud so you can use them anywhere."
+const text =
+    "Snippy is a rich coding snippets app that lets you create your own code snippets, categorize them, and even sync them in the cloud so you can use them anywhere.";

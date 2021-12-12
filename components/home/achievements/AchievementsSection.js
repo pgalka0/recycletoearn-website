@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import styles from "./achievementsSection.module.scss";
 import gsap, { Power4 } from "gsap";
 import Achievement from "../../shared/achievement/Achievement";
+import Link from "next/link";
 
 function AchievementsSection() {
     const blueBox = useRef(null);
@@ -34,7 +35,7 @@ function AchievementsSection() {
     }, []);
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id="achievements">
             <div className={styles.headerWrapper}>
                 <p className={styles.headerBox}>
                     <div className={styles.header}>
@@ -81,7 +82,9 @@ function AchievementsSection() {
                     </div>
                     <p className={styles.description}>{text}</p>
                     <div className={styles.buttonWrapper}>
-                        <button>Get started</button>
+                        <Link href="/achievements">
+                            <button>Get started</button>
+                        </Link>
                     </div>
                 </div>
             </div>
