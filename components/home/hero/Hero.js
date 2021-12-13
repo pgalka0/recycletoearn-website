@@ -1,35 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./hero.module.scss";
 import gsap, { Power4 } from "gsap";
-import { handleMetamaskConnection, addUser, readUsers } from "../../../Contracts/web3functions";
-import abi from "../../../Contracts/abi.json";
+import { handleMetamaskConnection} from "../../../Contracts/web3functions";
+
 import useWindowWidth from "hooks/useWindowWidth";
 const Web3 = require("web3");
 
 function Hero() {
     const purpleBox = useRef(null);
     const wrapper = useRef(null);
-    const [account, setAccount] = useState("");
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        // Check for Web3
-        if (window.ethereum) {
-            window.web3 = new Web3(window.ethereum);
-        } else if (window.web3) {
-            window.web3 = new Web3(window.web3.currentProvider);
-        } else {
-            window.alert("Non-Ethereum browser detected. You should consider trying MetaMask!");
-        }
-        try {
-            const contractAddress = "0x8ef3b917cDc30972F1899c9b1051706EBf0666E1";
-            const contract = new window.web3.eth.Contract(abi, contractAddress);
-            addUser(contract, account);
-            // readUsers(contract);
-        } catch (e) {
-            console.log(e);
-        }
-    }, [account]);
 
     useEffect(() => {
         const observerOptions = {
@@ -74,7 +53,7 @@ function Hero() {
                     <button
                         className={styles.purpleBtn}
                         onClick={() => {
-                            handleMetamaskConnection(window, setAccount);
+                            handleMetamaskConnection(window);
                         }}
                     >
                         Connect To Metamask

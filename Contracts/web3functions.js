@@ -1,13 +1,14 @@
 
 
+
 export const handleMetamaskConnection = async (window, setAccount) => {
 	
 	if (window.ethereum) {
 		const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-		setAccount(accounts[0]);
-		window.ethereum.on('accountsChanged', function (accounts) {
-			setAccount(accounts[0]);
-		});
+		localStorage.setItem("address", accounts[0]);
+		// window.ethereum.on('accountsChanged', function (accounts) {
+		// 	setAccount(accounts[0]);
+		// });
 	}else{
 		console.log('Install metamask')
 	}
@@ -17,7 +18,7 @@ export const handleMetamaskConnection = async (window, setAccount) => {
 export const addUser = async (contract, address) => {
 	try{
 		await contract.methods.addUser()
-			.send({from: address, gas: 3000000})
+			.send({from: address, gasLimit: 210000})
 			.on("receipt", (receipt) => {
 				console.log('User added, receipt: ', receipt)
 			})
