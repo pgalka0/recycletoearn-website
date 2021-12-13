@@ -1,8 +1,9 @@
 import styles from "./coinInfo.module.scss";
 import gsap, { Power4, Back } from "gsap";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
-import { addUser } from "../../../Contracts/web3functions";
+import { addUser, contractAddress } from "../../../Contracts/web3functions";
 import abi from "../../../Contracts/abi.json";
 
 const Web3 = require("web3");
@@ -46,7 +47,6 @@ function CoinInfo() {
                     window.alert("Non-Ethereum browser detected. You should consider trying MetaMask!");
                 }
 
-                const contractAddress = "0x8ef3b917cDc30972F1899c9b1051706EBf0666E1";
                 const contract = new window.web3.eth.Contract(abi, contractAddress);
 
                 addUser(contract, localStorage.getItem("address"));
@@ -73,7 +73,9 @@ function CoinInfo() {
                 <p className={styles.description}>{text}</p>
                 <div className={styles.buttonsWrapper}>
                     <button className={styles.greenBtn} onClick = {registerUser}>Register Yourself Using Metamask</button>
-                    <button className={styles.grayBtn}>Get started</button>
+                    <Link href = "/simulator">
+                        <button className={styles.grayBtn}>Try our simulator</button>
+                    </Link>
                 </div>
             </div>
         </div>
