@@ -43,11 +43,6 @@ function AchievementsSection() {
                     </div>
                     <p>achievements!</p>
                 </p>
-                <p className={styles.main}>
-                    Monetize your content by charging your most loyal readers and reward them
-                    loyalty points. Give back to your loyal readers by granting them access to your
-                    pre-releases and sneak-peaks.
-                </p>
             </div>
 
             <div className={styles.mainBox}>
@@ -81,11 +76,6 @@ function AchievementsSection() {
                         <p>recycling!</p>
                     </div>
                     <p className={styles.description}>{text}</p>
-                    <div className={styles.buttonWrapper}>
-                        <Link href="/achievements">
-                            <button>Check achievements</button>
-                        </Link>
-                    </div>
                 </div>
             </div>
         </div>
@@ -95,4 +85,4 @@ function AchievementsSection() {
 export default AchievementsSection;
 
 const text =
-    "Snippy is a rich coding snippets app that lets you create your own code snippets, categorize them, and even sync them in the cloud so you can use them anywhere.";
+    "You get points for throwing items into our slot machine.In the future, we will add a page with achievements.Score points and climb the table with your friends.";

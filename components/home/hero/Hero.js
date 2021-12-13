@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./hero.module.scss";
 import gsap, { Power4 } from "gsap";
-import { handleMetamaskConnection} from "../../../Contracts/web3functions";
+import { handleMetamaskConnection } from "../../../Contracts/web3functions";
 
 import useWindowWidth from "hooks/useWindowWidth";
 const Web3 = require("web3");
@@ -68,4 +68,4 @@ export default Hero;
 
 //temponary
 const text =
-    "Snippy is a rich coding snippets app that lets you create your own code snippets, categorize them, and even sync them in the cloud so you can use them anywhere.";
+    "Throw things into our machine, make a special card and collect money in the form of our proprietary cryptocurrency.";

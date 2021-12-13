@@ -66,14 +66,14 @@ function CoinInfo() {
             <div className={styles.rightWrapper}>
                 <div className={styles.headerBox}>
                     <p className={styles.header}>
-                        Recycle,
+                        Read,
                         <div ref={greenBox}></div>
                     </p>
-                    <p>earn money!</p>
+                    <p>about coin and project</p>
                 </div>
                 <p className={styles.description}>{text}</p>
                 <div className={styles.buttonsWrapper}>
-                    <button className={styles.greenBtn} onClick={registerUser}>Register Yourself Using Metamask</button>
+                    <button className={styles.greenBtn} onClick={registerUser}>Register with Metamask</button>
                     <Link href="/simulator">
                         <button className={styles.grayBtn}>Try our simulator</button>
                     </Link>
@@ -87,4 +87,4 @@ export default CoinInfo;
 
 //temponary
 const text =
-    "Snippy is a rich coding snippets app that lets you create your own code snippets, categorize them, and even sync them in the cloud so you can use them anywhere.";
+    "Our project solves problem of reluctance to recycle. Our project rewards our users for recycling using our slot machines. Users receive our tradeable token.  ";

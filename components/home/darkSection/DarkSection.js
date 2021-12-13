@@ -30,9 +30,7 @@ function DarkSection() {
                 <div className={styles.coinInfo}>
                     <p className={styles.header}>Get our coin</p>
                     <p className={styles.description}>
-                        Monetize your content by charging your most loyal readers and reward them
-                        loyalty points. Give back to your loyal readers by granting them access to
-                        your pre-releases and sneak-peaks.
+                        You can buy our coin or get it by throwing things into our slot machines.
                     </p>
                 </div>
             </div>
