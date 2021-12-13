@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Nav from "components/achievements/nav/Nav";
 import StatsBoard from "components/achievements/StatsBoard/StatsBoard";
 
 export default function Achievements() {
@@ -11,7 +10,6 @@ export default function Achievements() {
                 <link rel="icon" href="/logoPurpleSaturated.png" />
             </Head>
             <main>
-                <Nav />
                 <StatsBoard />
             </main>
         </div>

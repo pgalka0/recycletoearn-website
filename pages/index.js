@@ -7,6 +7,7 @@ import Footer from "components/shared/footer/Footer";
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import CoinInfo from "../components/home/coinInfo/CoinInfo";
+import StatsBoard from "components/achievements/StatsBoard/StatsBoard";
 /* 
 @media(max-width: 1280px) {
 @media(max-width: 768px) {
@@ -30,6 +31,7 @@ export default function Home() {
                 <CoinInfo />
                 <DarkSection />
                 <AchievementsSection />
+                <StatsBoard />
                 <Footer />
             </main>
         </div>

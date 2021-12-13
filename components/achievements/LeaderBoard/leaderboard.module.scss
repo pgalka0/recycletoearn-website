@@ -1,0 +1,93 @@
+.wrapper {
+    text-align: center;
+
+    .topWrapper {
+        padding: 10px 20px;
+        font-size: 32px;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .bottomWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: transparent;
+        padding: 10px 20px;
+    }
+}
+
+.userBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #191919;
+    border: 1px solid #8d27dd;
+    border-radius: 10px;
+    padding: 10px 20px;
+
+    .leftWrapper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 3px 10px;
+    }
+
+    .position {
+        display: grid;
+        place-items: center;
+        position: relative;
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        font-weight: 500;
+        padding: 5px;
+        font-size: 14px;
+        p {
+            position: absolute;
+        }
+        img {
+            z-index: -1;
+            position: absolute;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .username {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .points {
+        font-size: 18px;
+        color: #fff;
+        text-shadow: 0px 0px 2px black;
+        font-weight: 700;
+    }
+}
+
+.userBox:nth-child(1) {
+    .username {
+        color: rgb(57, 122, 175);
+    }
+}
+
+.userBox:nth-child(2) {
+    .username {
+        color: #ed8936;
+    }
+}
+
+.userBox:nth-child(3) {
+    .username {
+        color: #a0aec0;
+    }
+}
+.userBox:nth-child(4) {
+    .username {
+        color: #b092ee;
+    }
+}
