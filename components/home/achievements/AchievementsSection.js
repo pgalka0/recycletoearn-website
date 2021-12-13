@@ -83,7 +83,7 @@ function AchievementsSection() {
                     <p className={styles.description}>{text}</p>
                     <div className={styles.buttonWrapper}>
                         <Link href="/achievements">
-                            <button>Get started</button>
+                            <button>Check achievements</button>
                         </Link>
                     </div>
                 </div>

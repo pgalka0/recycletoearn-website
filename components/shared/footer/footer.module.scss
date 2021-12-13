@@ -1,0 +1,111 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #191919;
+    position: relative;
+    border-radius: 60px 60px 0 0;
+    padding: 5% 10%;
+    overflow: hidden;
+
+    .leftWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        justify-content: space-between;
+        font-size: 22px;
+
+        ul {
+            li {
+                color: #fff;
+                :hover {
+                    color: rgb(221, 221, 221);
+                    transition: color 0.3s;
+                }
+            }
+        }
+    }
+
+    .background {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 220px;
+        color: #fff;
+        opacity: 10%;
+        font-weight: 700;
+        user-select: none;
+
+        span {
+            color: #9f7aea;
+        }
+    }
+
+    .rightBottomImg {
+        position: absolute;
+        user-select: none;
+        height: 550px;
+        transform: rotate(-40deg);
+        right: -5%;
+        bottom: -35%;
+    }
+}
+
+@media (max-width: 1580px) {
+    .wrapper {
+        .background {
+            font-size: 180px;
+        }
+
+        .rightBottomImg {
+            height: 500px;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .wrapper {
+        .background {
+            font-size: 120px;
+        }
+
+        .rightBottomImg {
+            height: 440px;
+        }
+    }
+}
+@media (max-width: 1280px) {
+    .wrapper {
+        .background {
+            font-size: 90px;
+        }
+
+        .rightBottomImg {
+            height: 380px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 7% 10%;
+        .leftWrapper {
+            gap: 30px;
+            font-size: 18px;
+        }
+
+        .background {
+            // bottom: 50%;
+            transform: rotate(-90deg);
+            // top: 50%;
+            right: -70px;
+            left: auto;
+            // left: auto;
+            font-size: 28px;
+        }
+
+        .rightBottomImg {
+            // height: 100px;
+            display: none;
+        }
+    }
+}

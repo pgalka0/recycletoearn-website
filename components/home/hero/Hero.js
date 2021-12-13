@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./hero.module.scss";
 import gsap, { Power4 } from "gsap";
-import { handleMetamaskConnection, addUser, readUsers } from '../../../Contracts/web3functions'
-import abi from '../../../Contracts/abi.json';
+import { handleMetamaskConnection, addUser, readUsers } from "../../../Contracts/web3functions";
+import abi from "../../../Contracts/abi.json";
 import useWindowWidth from "hooks/useWindowWidth";
-const Web3 = require("web3")
+const Web3 = require("web3");
 
 function Hero() {
     const purpleBox = useRef(null);
@@ -12,27 +12,24 @@ function Hero() {
     const [account, setAccount] = useState("");
     const [users, setUsers] = useState([]);
 
-
-
     useEffect(() => {
-        // Check for Web3 
+        // Check for Web3
         if (window.ethereum) {
             window.web3 = new Web3(window.ethereum);
         } else if (window.web3) {
             window.web3 = new Web3(window.web3.currentProvider);
         } else {
-            window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
+            window.alert("Non-Ethereum browser detected. You should consider trying MetaMask!");
         }
         try {
-            const contractAddress = '0x8ef3b917cDc30972F1899c9b1051706EBf0666E1';
+            const contractAddress = "0x8ef3b917cDc30972F1899c9b1051706EBf0666E1";
             const contract = new window.web3.eth.Contract(abi, contractAddress);
             addUser(contract, account);
             // readUsers(contract);
         } catch (e) {
-            console.log(e)
+            console.log(e);
         }
-
-    }, [account])
+    }, [account]);
 
     useEffect(() => {
         const observerOptions = {
@@ -60,7 +57,7 @@ function Hero() {
         observer.observe(wrapper.current);
     }, []);
     return (
-        <div className={styles.wrapper} ref={wrapper}>
+        <div className={styles.wrapper} ref={wrapper} id="home">
             <img src="/logoPurpleSaturated.png" alt="" className={styles.rightImg} />
             <img src="/logoPurpleSaturated.png" alt="" className={styles.topCenterImg} />
             <img src="/logoPurpleSaturated.png" alt="" className={styles.bottomCenterImg} />
@@ -76,8 +73,12 @@ function Hero() {
                 <div className={styles.buttonsWrapper}>
                     <button
                         className={styles.purpleBtn}
-                        onClick={() => { handleMetamaskConnection(window, setAccount) }}
-                    >Connect To Metamask</button>
+                        onClick={() => {
+                            handleMetamaskConnection(window, setAccount);
+                        }}
+                    >
+                        Connect To Metamask
+                    </button>
                 </div>
             </div>
         </div>

@@ -46,8 +46,8 @@ function HamburgerMenu() {
             <div className={`${styles.menuBoxMobile} ${isOpen && styles.menuBoxMobileActive}`}>
                 <ul>
                     <li>
-                        <Link href="/" onClick={() => setOpen(false)}>
-                            <a>Home</a>
+                        <Link href="/">
+                            <a onClick={() => setOpen(false)}>Home</a>
                         </Link>
                     </li>
                     <li>
@@ -75,15 +75,18 @@ export default function Nav() {
     return (
         <nav className={styles.wrapper}>
             <div className={styles.leftWrapper}>
-                <div className={styles.logoBox}>
-                    <img src="logoPurpleSaturated.png" alt="logo" />
-                    <p>
-                        recycle
-                        <span>to</span>
-                        earn
-                    </p>
-                </div>
+                <Link href="/">
+                    <div className={styles.logoBox}>
+                        <img src="logoPurpleSaturated.png" alt="logo" />
+                        <p>
+                            recycle
+                            <span>to</span>
+                            earn
+                        </p>
+                    </div>
+                </Link>
             </div>
+
             <div className={styles.rightWrapper}>
                 {useWindowWidth() > 1280 ? <Menu /> : <HamburgerMenu />}
             </div>

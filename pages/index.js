@@ -3,6 +3,7 @@ import AnimationView from "components/home/animationView/AnimationView";
 import DarkSection from "components/home/darkSection/DarkSection";
 import Hero from "components/home/hero/Hero";
 import Nav from "components/shared/nav/Nav";
+import Footer from "components/shared/footer/Footer";
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import CoinInfo from "../components/home/coinInfo/CoinInfo";
@@ -29,7 +30,8 @@ export default function Home() {
                 <CoinInfo />
                 <DarkSection />
                 <AchievementsSection />
-            </main >
-        </div >
+                <Footer />
+            </main>
+        </div>
     );
 }
