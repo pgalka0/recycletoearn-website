@@ -37,7 +37,7 @@ function CoinInfo() {
     }, []);
 
     const registerUser = () => {
-        if(localStorage.getItem("address") !== "") {
+        if (localStorage.getItem("address") !== "") {
             try {
                 if (window.ethereum) {
                     window.web3 = new Web3(window.ethereum);
@@ -53,14 +53,15 @@ function CoinInfo() {
             } catch (e) {
                 console.log(e);
             }
-        }else{
+        } else {
             console.log("Connect to metamask")
         }
     }
     return (
         <div className={styles.wrapper} id="about">
             <div className={styles.leftWrapper}>
-                <img src="/logo.png" alt="" />
+                <img src="/cardToken.svg" alt="" className={styles.card} />
+                <img src="/logo.png" alt="" className={styles.bgImg} />
             </div>
             <div className={styles.rightWrapper}>
                 <div className={styles.headerBox}>
@@ -72,8 +73,8 @@ function CoinInfo() {
                 </div>
                 <p className={styles.description}>{text}</p>
                 <div className={styles.buttonsWrapper}>
-                    <button className={styles.greenBtn} onClick = {registerUser}>Register Yourself Using Metamask</button>
-                    <Link href = "/simulator">
+                    <button className={styles.greenBtn} onClick={registerUser}>Register Yourself Using Metamask</button>
+                    <Link href="/simulator">
                         <button className={styles.grayBtn}>Try our simulator</button>
                     </Link>
                 </div>

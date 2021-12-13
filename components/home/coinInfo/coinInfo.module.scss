@@ -61,14 +61,23 @@
 .leftWrapper {
     height: 500px;
     position: relative;
+    display: flex;
+    align-items: center;
 
-    img {
+    .bgImg {
         width: 100%;
         height: 100%;
         position: absolute;
         object-fit: contain;
         transform: rotate(-30deg);
         opacity: 0.4;
+    }
+
+    .card {
+        position: absolute;
+        z-index: 1;
+        height: 70%;
+        width: 100%;
     }
 }
 
@@ -85,6 +94,13 @@
 
     .leftWrapper {
         height: 300px;
+
+        .card {
+            position: absolute;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+        }
     }
 }
 

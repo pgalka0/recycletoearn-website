@@ -17,10 +17,10 @@ const useWindowWidth = () => {
   return windowWidth;
 };
 export const useIfSafari = () => {
-  const [isSafari, setIsSafari] = useState(false);
+  const [isSafari, setSafari] = useState(false);
 
   useEffect(() => {
-    setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
+    setSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
   }, []);
 
   return isSafari;

@@ -4,30 +4,6 @@ import gsap, { Power4 } from 'gsap';
 import { useEffect, useRef } from 'react';
 
 function DarkSection() {
-    const animationText = useRef(null)
-
-    useEffect(() => {
-        const observerOptions = {
-            threshold: 1,
-        };
-
-        const observerCallback = (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const tl = gsap.timeline();
-                    setTimeout(() => {
-                        // tl.fromTo(animationText.current, { transform: `translate(0)` }, { transform: `translateX(-200%)`, duration: 1, ease: Power4.easeInOut })
-                    }, 500);
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-        observer.observe(animationText.current);
-    }, []);
-
     return (
         <div className={styles.wrapper} id="coin">
             <div className={styles.absLines}>
@@ -58,18 +34,6 @@ function DarkSection() {
                         loyalty points. Give back to your loyal readers by granting them access to
                         your pre-releases and sneak-peaks.
                     </p>
-                </div>
-            </div>
-            <div className={styles.bottomWrapper}>
-                <div className={styles.animationText} ref={animationText}>
-                    <p className={styles.headerAnimation}>Collect money on our card</p>
-                    <p className={styles.descriptionAnimation}>
-                        Monetize your content by charging your most loyal readers and reward them loyalty points.
-                    </p>
-                    {/* benefit */}
-                </div>
-                <div className={styles.photoWrapper}>
-                    <img src="/card.png" />
                 </div>
             </div>
         </div >
